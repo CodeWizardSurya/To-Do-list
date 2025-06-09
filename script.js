@@ -1,44 +1,47 @@
-//selecting popub box popub overlay button
+const taskInput = document.getElementById('task-input');
+const addButton = document.getElementById('add-task-btn');
+const taskList = document.getElementById('task-list');
 
-var popuboverlay = document.querySelector(".popub-overlay")
-var popubpox = document.querySelector(".popub-box")
-var addpopubbutton = document.getElementById("add-popub-button")
+function addTask() {
+  const taskText = taskInput.value.trim();
+  if (taskText === '') return;
 
-addpopubbutton.addEventListener("click", function () {
-    popuboverlay.style.display = "block"
-    popubpox.style.display = "block"
-})
+  const li = document.createElement('li');
 
-//select cancel button
+  // Create a span to hold the task text for better layout control
+  const taskSpan = document.createElement('span');
+  taskSpan.textContent = taskText;
 
-var cancelpopub = document.getElementById("cancel-popub")
+  li.appendChild(taskSpan);
 
-cancelpopub.addEventListener("click", function (event) {
-    event.preventDefault()
-    popuboverlay.style.display = "none"
-    popubpox.style.display = "none"
-})
+  li.addEventListener('click', () => {
+    li.classList.toggle('completed');
+  });
 
-//select container,add-book,book-title-input,book-author-input,book-description-input
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Delete';
+  deleteBtn.classList.add('delete-btn');
 
-var container = document.querySelector(".container")
-var addbook = document.getElementById("add-book")
-var booktitleinput = document.getElementById("book-title-input")
-var bookauthorinput = document.getElementById("book-author-input")
-var bookdescriptioninput = document.getElementById("book-description-input")
+  deleteBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    li.remove();
+  });
 
-addbook.addEventListener("click", function (event) {
-    event.preventDefault()
-    var div = document.createElement("div")
-    div.setAttribute("class", "book-container")
-    div.innerHTML = ` <h2>${booktitleinput.value}</h2> 
-    <h5>${bookauthorinput.value}</h5> 
-    <p>${bookdescriptioninput.value}</p>
-    <button onclick="deletebook(event)">delete</button>`
-    container.append(div)
-})
+  li.appendChild(deleteBtn);
+  taskList.appendChild(li);
 
-function deletebook(event) {
-    event.target.parentElement.remove()
+  taskInput.value = '';
+  taskInput.focus();
 }
 
+addButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  addTask();
+});
+
+taskInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    addTask();
+  }
+});
