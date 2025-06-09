@@ -1,62 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>book</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-    <div class="navbar">
-        <h1>Book Adder</h1>
-    </div>
-
     <div class="container">
-        <div class="book-container">
-            <h2>Eleanor & Park</h2>
-            <h5>Rainbow Rowell</h5>
-            <p>Eleanor & Park" is a heartfelt and poignant novel that follows the unlikely romance between two misfit
-                teenagers, Eleanor and Park, set in 1986. Eleanor is a new student at Park's high school, and she stands
-                out with her eccentric style and troubled home life. Park, on the other hand, is a quiet and
-                introspective boy who loves comic books and music. Despite their differences, they form a connection
-                through their shared love of music and comics, gradually falling for each other as they bond over
-                mixtapes and shared moments on the bus ride to and from school. However, their budding romance faces
-                numerous obstacles, including bullying, family dysfunction, and societal prejudices. As their
-                relationship deepens, Eleanor and Park must confront the challenges of first love and the uncertainty of
-                whether their feelings are reciprocated. "Eleanor & Park" is a beautifully written story about the
-                complexities of teenage love, friendship, and self-discovery, capturing the bittersweet experience of
-                longing for someone who may never love you back in the same way.</p>
-            <button onclick="deletebook(event)">delete</button>
+        <h1>My To-Do List</h1>
+        <div class="input-area">
+            <input type="text" id="task-input" placeholder="Enter a new task..." />
+            <button id="add-task-btn">Add</button>
         </div>
+        <ul id="task-list"></ul>
     </div>
 
-    <div class="popub-overlay"></div>
-    <div class="popub-box">
-        <h2>ADD BOOK</h2>
-        <form>
-            <input type="text" placeholder="Book Title" id="book-title-input">
-            <input type="text" placeholder="Book Author" id="book-author-input">
-            <textarea placeholder="Short Description" id="book-description-input"></textarea>
-            <button id="add-book">ADD</button>
-            <button id="cancel-popub">CANCEL</button>
-
-        </form>
-    </div>
-
-    <button class="add-button" id="add-popub-button">+</button>
     <script src="script.js"></script>
 </body>
-
 </html>
