@@ -1,132 +1,124 @@
- * {
-     margin: 0;
-     padding: 0;
- }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
- body {
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #333;
+}
 
-     font-family: "Poppins", sans-serif;
- }
+.container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
- .navbar {
-     background-color: #fd6569;
-     padding: 10px;
- }
+h1 {
+    margin-bottom: 20px;
+    color: #007acc;
+    text-align: center;
+}
 
- .container {
-     padding: 10px;
- }
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
- .book-container {
-     padding: 15px;
-     width: 25%;
-     background-color: black;
-     border-radius: 10px;
-     color: white;
-     margin: 30px;
-     display: inline-block;
-     vertical-align: top;
- }
+#task-input {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #007acc;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
 
- .book-container h2 {
-     color: #fd6569;
- }
+#task-input:focus {
+    border-color: #005f99;
+    outline: none;
+}
 
- .book-container button {
-     background-color: #fd6569;
-     color: black;
-     border-radius: 10px;
-     padding-top: 5px;
-     padding-bottom: 5px;
-     padding-left: 10px;
-     padding-right: 10px;
-     border: none;
-     margin-top: 15px;
- }
-
- .add-button {
-    background-color: #fd6569;
-    color: black;
-    border-radius: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 40px;
+#add-task-btn {
+    padding: 12px 25px;
+    background-color: #007acc;
     border: none;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
- }
- 
+    color: white;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
- .popub-overlay {
-     background-color: black;
-     opacity: 0.8;
-     position: absolute;
-     width: 150%;
-     height: 150%;
-     top: 0;
-     left: 0;
-     z-index: 1;
-     display: none;
- }
+#add-task-btn:hover {
+    background-color: #005f99;
+}
 
- .popub-box {
-     background-color: #fd6569;
-     width: 40%;
-     padding: 40px;
-     border-radius: 10px;
-     position: absolute;
-     top: 30%;
-     left: 30%;
-     z-index: 2;
-     display: none;
- }
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
 
- .popub-box input {
-     background: transparent;
-     border: none;
-     width: 100%;
-     margin: 5px;
-     padding: 5px;
-     font-size: 20px;
-     border-bottom: solid black 2px;
+#task-list li {
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    background-color: #e6f2ff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* full width for each task */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #007acc; /* added border for clear separation */
+}
 
- }
+#task-list li.completed {
+    text-decoration: line-through;
+    color: #888;
+    background-color: #c2dfff;
+}
 
- .popub-box textarea {
-     background: transparent;
-     width: 100%;
-     margin: 5px;
-     padding: 5px;
-     font-size: 20px;
-     border: solid black 2px;
- }
+#task-list li:hover {
+    background-color: #d0e7ff;
+}
 
- .popub-box input::placeholder {
-     color: black;
- }
+button:focus {
+    outline: 2px solid #005f99;
+    outline-offset: 2px;
+}
 
- .popub-box textarea::placeholder {
-     color: black;
- }
+.container, #task-list {
+    box-sizing: border-box;
+    width: 100%;
+}
 
- .popub-box button {
-     background-color: black;
-     padding-left: 20px;
-     padding-right: 20px;
-     border: none;
-     padding-top: 10px;
-     padding-bottom: 10px;
-     color: white;
-     margin: 5px;
- }
+.delete-btn {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
 
- .popub-box input:focus {
-     outline: none;
- }
-
- .popub-box textarea:focus {
-     outline: none;
- }
+.delete-btn:hover {
+    background-color: #cc0000;
+}
